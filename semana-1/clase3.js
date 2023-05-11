@@ -18,8 +18,8 @@
 let puntajes = {
     usuario: 0,
     computadora: 0,
+    empate: 0
 }
-
 const nombreJugador = iniciarJuego();
 
 // 👇 mientras ninguno haya llegado a 2 puntos seguimos jugando
@@ -34,11 +34,15 @@ while (puntajes.usuario < 2 && puntajes.computadora < 2) {
         puntajes.usuario++;
     } else if (resultadoDePartida.includes("ganaste")) {
         puntajes.computadora++
+    } else{
+        puntajes.empate++;
     }
 
+    
     console.table(puntajes);
 
 }
+
 
 /* -------------------------------------------------------------------------- */
 /*                          CONSIGNA MESA DE TRABAJO                          */
